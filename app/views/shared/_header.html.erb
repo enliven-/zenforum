@@ -1,0 +1,21 @@
+<header class="span10 center">
+  <h1><%= link_to "Zen Forum", root_path%> </h1>
+  
+  <div class="menu">
+    <% if user_signed_in? %>
+         <%= link_to "New post", new_post_path %><br>
+         <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <%else%>
+        <%= link_to "Sign up", new_user_registration_path %><br>
+        <%= link_to "Sign in", new_user_session_path %>
+        <%end%>
+        <br>
+        <%= render 'subscribers/forum_subscriber' %>
+  </div>
+  
+<h3>Header and tag goes here</h3>
+
+
+
+
+</header>

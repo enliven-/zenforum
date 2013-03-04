@@ -1,0 +1,22 @@
+
+<a href="#forumSubscriber" role="button" data-toggle="modal">Subscribe</a>
+<!-- Modal -->
+ <%= simple_form_for(ForumSubscriber.new, url: subscribers_path) do |f| %>
+<div id="forumSubscriber" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h2 id="myModalLabel">Subscribe to forum</h2>
+  </div>
+  <div class="modal-body">
+
+<%= f.input :email, label: false, placeholder: 'Email' %>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.button :submit, "Subscribe",class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<%end%>
+

@@ -1,0 +1,10 @@
+ <fieldset>
+    <legend>New Post</legend>
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :title, input_html: {class: 'span10'}, autofocus: true, required: false %>  
+    <%= f.input :content, input_html: {class: 'span10'}, required: false %> 
+    <%= f.button :submit, "Post it",class: 'btn btn-primary' %>
+  
+<% end %>
+</fieldset>

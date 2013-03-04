@@ -1,0 +1,3 @@
+class ForumSubscriber < Subscriber
+	
+end

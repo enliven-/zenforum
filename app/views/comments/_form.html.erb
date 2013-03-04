@@ -1,0 +1,6 @@
+<%= simple_form_for([@post, @post.comments.build]) do |f| %>
+    <%= f.input :body, label: false, placeholder: 'Leave a comment...', input_html: { class: 'span10', rows: 2 }, required: false  %>
+  
+    <%= f.button :submit, "Comment",class: 'btn btn-primary' %>
+  
+<% end %>

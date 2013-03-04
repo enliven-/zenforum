@@ -1,0 +1,40 @@
+
+<li class='comment clearfix' 
+style="padding-left:20px;
+position: relative;
+padding: 15px 0px 15px 0px;
+line-height: 20px; 
+border-top: 1px solid rgba(0,0,0,0.1);">
+
+<p style="font-size:90%"><i class="icon-user"></i>
+	<%= comment.user.name %><span class="posted-time"> (<%= time_difference(Time.now, comment.created_at) %> ago) </span>
+</p>
+ <p> <%= simple_format(comment.body) %> </p>
+  
+ <footer>
+ 	<ul class="inline unstyled comment-footer">
+
+ 		<li><% if comment.likes > 1 %>
+			<%= comment.likes %> people like this
+			<%elsif comment.likes == 1%>
+			<%= comment.likes %> person like this
+			<%else%>
+			No likes yet
+			<%end%></li>
+			
+		<% if user_signed_in? %>
+		<% if ! comment.likers(User).include? current_user %>
+		<li>
+ 		<%= link_to	'Like', comment_like_path(comment), method: :post%>
+ 		</li>
+ 		<%else%>
+ 		<li> 
+ 			<%= link_to	'Unlike', comment_unlike_path(comment), method: :post%>
+ 		</li>
+ 		<%end%>
+ 		<%end%>
+ 	</ul>
+</footer>
+
+</li>
+

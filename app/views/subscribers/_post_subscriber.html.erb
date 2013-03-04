@@ -1,0 +1,22 @@
+<!-- Button to trigger modal -->
+<a href="#postSubscriber" role="button" data-toggle="modal">Subscribe</a>
+
+<%= simple_form_for(PostSubscriber.new, url: subscribers_path) do |f| %>
+ 
+<!-- Modal -->
+<div id="postSubscriber" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Subscribe to post</h3>
+  </div>
+  <div class="modal-body">
+    <%= f.input :email, placeholder: 'Email', label: false, required: false %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.button :submit, "Subscribe",class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<% end %>

@@ -1,0 +1,30 @@
+<div class="post-content span10">
+
+  <% if notice%>
+  <div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert">×</button><p><%= notice %></p></div>
+  <%end%>
+
+<table class="table">
+	<thead>
+  <tr style="vertical-align:top; border-bottom:1px solid #ff6600;">
+  	<td class="comments" style="float:left">comments</td>
+  	<td class= "post" style="padding-top:">author</td>
+  	<td></td>
+  </tr>
+</thead>
+<tbody>
+<% @posts.each do |post| %>
+  <tr>
+  	<td class="pull-right comments"><%= post.comments.count %></td>
+  	<td class="post-title"><%= post.user.name %></td>
+    <td><%= link_to post.title, post_path(post) %> <span class="posted-time"> (<%= time_difference(Time.now, post.created_at) %> ago) </span></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+</div>
+
+
+

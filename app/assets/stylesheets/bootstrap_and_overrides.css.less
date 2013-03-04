@@ -1,0 +1,139 @@
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+// Note: If you use asset_path() here, your compiled bootstrap_and_overrides.css will not
+//       have the proper paths. So for now we use the absolute path.
+@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot?v=3.0.2");
+@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot?#iefix&v=3.0.2");
+@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff?v=3.0.2");
+@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf?v=3.0.2");
+
+// Font Awesome
+@import "fontawesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+body {
+	line-height: 1; color: black; background: white;
+}
+
+.center { 
+	float: none; 
+	margin-left: auto; 
+	margin-right: auto; 
+}
+
+
+/* posts table posts/index */
+
+ .table td {
+ border-top: none;
+ }
+
+td.post-title { 
+	width: 17%;
+}
+
+td a, td a:hover {
+	color: black;
+	text-decoration:none;
+}
+
+td a:focus,td a:hover,td a:active { 
+ background-color: #f6f7ee;
+  text-decoration: none; 
+  }
+
+  td a:visited {
+  color:#999;
+  }
+
+span.posted-time {
+	color:#999;
+	font-size:90%;
+}
+
+th.comments, td.comments {
+display: inline;
+
+width: 6.557%;
+margin-right: 50px;
+margin-left: 1.639%;
+text-align: right;
+font-size: 1em;
+}
+
+/* Header 
+
+header { clear: both; margin-right: 1.639%; margin-left: 1.639%; font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; }
+header h1 { margin-left: 1.639%; padding-left: 16.393%; display: inline; float: left; width: 55.738%; margin-right: 1.639%; font-size: 1.5em; line-height: 1.333em; margin-top: 1.333em; margin-bottom: 0em; }
+header h1 a { color: #000; text-decoration: none; }
+header h1 a:link { color: #000; }
+header h1 a:visited, header h1 a:focus, header h1 a:active { color: #444; }
+header h1 a:hover { background-color: #f6f7ee; }
+header h1 span { font-size: 12px; }
+header h1 span a { color: #000; }
+header h1 span a:link { color: #000; }
+header h1 span a:visited, header h1 span a:focus, header h1 span a:active { color: #444; }
+header h1 span a:hover { background-color: #f6f7ee; }
+header h3 { clear: both; margin-right: 1.639%; margin-left: 1.639%; padding-left: 16.393%; font-size: 0.75em; line-height: 2.667em; margin-bottom: 0.5em; line-height: 12px; }
+header h3 a { color: #000; }
+header h3 a:link { color: #000; }
+header h3 a:visited, header h3 a:focus, header h3 a:active { color: #444; }
+header h3 a:hover { background-color: #f6f7ee; }
+header h3 span { float: right; }
+header .info { display: inline; float: left; width: 22.951%; margin-right: 1.639%; display: inline; float: right; margin-right: 1.639%; margin-left: -1em; font-size: 0.75em; line-height: 2.667em; margin-top: 2.667em; line-height: 12px; }
+header .info a { color: #000; }
+header .info a:link { color: #000; }
+header .info a:visited, header .info a:focus, header .info a:active { color: #444; }
+header .info a:hover { background-color: #f6f7ee; }
+*/
+
+header { clear: both; margin-right: 1.639%; margin-left: 1.639%; font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;border-bottom:1em; }
+
+header h1 { margin-left: 1.639%; padding-left: 16.393%; display: inline; float: left; width: 55.738%; margin-right: 1.639%; font-size: 1.5em; line-height: 1.333em; margin-top: 1.333em; margin-bottom: 0em; }
+header h1 a { color: #000; text-decoration: none; }
+
+  header h1 a { color: #000; text-decoration: none; }
+header h1 a:link { color: #000; }
+header h1 a:visited, header h1 a:focus, header h1 a:active { color: #444; }
+header h1 a:hover { background-color: #f6f7ee; text-decoration:none; }
+
+ header h3 { 
+ 
+ margin-right: 1.639%; 
+ margin-left: 1.639%; 
+ padding-left: 16.393%; font-size: 0.75em; 
+ line-height: 2.667em; 
+ margin-bottom: 0.5em; 
+ line-height: 12px; }
+
+header h3 span { float: right; padding-right: 5%}
+
+ header .menu { display: inline; 
+ float: left;
+  width: 22.951%;
+   margin-right: 1.639%; display: inline; float: right; margin-right: 1.639%; margin-left: -1em; font-size: 0.75em; line-height: 2.667em; margin-top: 2.667em; line-height: 12px; }
+
+
+header .menu a { color: #000; text-decoration:underline }
+header .menu a:link, { color: #000; }
+header .menu a:visited, header .info a:focus, header .menu a:active { color: #444; }
+header .menu a:hover { background-color: #f6f7ee; }

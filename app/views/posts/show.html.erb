@@ -1,0 +1,63 @@
+<div class='post'>
+<% if notice%>
+	<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert">×</button><p><%= notice %></p> </div>
+	<%end%>
+	
+
+<div class="lead">
+  <%= @post.title %>
+</div>
+
+<div class="post-content">
+<p>
+  <%= simple_format(@post.content) %>
+</p>
+
+</div>
+
+
+<ul class="inline unstyled post-footer">
+
+<li class="post-user-name">
+	by <%= @post.user.name %> <span class="posted-time"> (<%= time_difference(Time.now, @post.created_at) %> ago) </span></li>
+		<li><% if @post.likes > 1 %>
+			<%= @post.likes %> people like this 
+			<%elsif @post.likes == 1%>
+			<%= @post.likes %> person like this 
+			<%else%>
+			No likes yet
+			<%end%></li>
+			
+		<% if user_signed_in? %>
+		<% if ! @post.likers(User).include? current_user %>
+		<li>
+ 		<%= link_to	'Like', post_like_path(@post), method: :post%>
+ 		</li>
+ 		<%else%>
+ 		<li> 
+ 			<%= link_to	'Unlike', post_unlike_path(@post), method: :post%>
+ 		</li>
+ 		<%end%>
+ 		<%end%>
+ 		<li class="bullet">•</li>
+ 		<li> <%= render 'subscribers/post_subscriber' %> </li>
+
+<%#= render "subscribers/post_subscriber" %>
+
+
+</ul>
+
+
+<%= render "comments/form" %>
+
+<div class='comment'>
+	<ul class="unstyled">
+<%= render @post.comments[0...-1].reverse %>
+</ul>
+</div>
+</p>
+
+
+
+
